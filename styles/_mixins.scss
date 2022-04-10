@@ -1,0 +1,38 @@
+@mixin d-flex ($justifyContent, $alignItems) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin fontStyle ($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin media ($size) {
+    @if ($size == md) {
+        @media (max-width: 768px) {
+            @content;
+        }
+    } @else if ($size == lg) {
+        @media (min-width: 768px) and (max-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+@mixin mainCard {
+    height: 632px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondaryColor;
+    padding: 1rem;
+}
+
+@mixin boxStyle {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
